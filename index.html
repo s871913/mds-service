@@ -5,25 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Noah Han | 韓諾亞 - AI 跨域顧問 & 品牌策略專家</title>
   
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Tailwind Configuration (已套用 ITRI 色票) -->
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
             brand: {
-              blue: '#009BD9',    // ITRI Blue
-              deep: '#005192',    // Deep Blue
-              green: '#00B386',   // Green
-              purple: '#6A5ACD',  // Purple
-              orange: '#FF8A00',  // Orange
-              yellow: '#FFC72C',  // Yellow
-              mint: '#00B386',    // Mint mapped to Green
-              slate: '#F5F7F9',   // Light neutral background
-              dark: '#111827'     // Text primary
+              blue: '#009BD9',
+              deep: '#005192',
+              green: '#00B386',
+              purple: '#6A5ACD',
+              orange: '#FF8A00',
+              yellow: '#FFC72C',
+              mint: '#00B386',
+              slate: '#F5F7F9',
+              dark: '#111827'
             }
           },
           fontFamily: {
@@ -34,18 +32,14 @@
     }
   </script>
 
-  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-  <!-- FontAwesome (brands for LINE / FB / LinkedIn / GitHub) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Custom Styles for Premium Effects -->
   <style>
     .glassmorphism {
       background: rgba(255, 255, 255, 0.7);
@@ -107,6 +101,25 @@
     }
 
     .text-brand-dark { color: #111827; }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 12px;
+      aspect-ratio: 1;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 30px rgba(0,155,217,0.2);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   </style>
 </head>
 <body class="bg-brand-slate text-brand-dark font-sans relative overflow-x-hidden antialiased selection:bg-brand-blue/10 selection:text-brand-blue">
@@ -132,6 +145,7 @@
           <a href="#about" class="hover:text-brand-blue transition-colors duration-200">關於我</a>
           <a href="#services" class="hover:text-brand-blue transition-colors duration-200">核心服務</a>
           <a href="#portfolio" class="hover:text-brand-blue transition-colors duration-200">案例展示</a>
+          <a href="#gallery" class="hover:text-brand-blue transition-colors duration-200">活動亮點</a>
           <a href="#blog" class="hover:text-brand-blue transition-colors duration-200">觀點文章</a>
           <a href="#contact" class="px-5 py-2.5 rounded-full bg-slate-900 text-white hover:bg-brand-blue shadow-sm hover:shadow-lg hover:shadow-brand-blue/15 transition-all duration-300 transform hover:-translate-y-0.5">預約諮詢</a>
         </div>
@@ -147,6 +161,7 @@
         <a href="#about" class="py-2 hover:text-brand-blue transition-colors duration-200">關於我</a>
         <a href="#services" class="py-2 hover:text-brand-blue transition-colors duration-200">核心服務</a>
         <a href="#portfolio" class="py-2 hover:text-brand-blue transition-colors duration-200">案例展示</a>
+        <a href="#gallery" class="py-2 hover:text-brand-blue transition-colors duration-200">活動亮點</a>
         <a href="#blog" class="py-2 hover:text-brand-blue transition-colors duration-200">觀點文章</a>
         <a href="#contact" class="py-3 rounded-xl bg-brand-blue text-white hover:bg-brand-purple transition-all duration-300">預約諮詢</a>
       </div>
@@ -206,22 +221,11 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         <div class="lg:col-span-5 flex flex-col space-y-6">
           <div class="relative rounded-3xl overflow-hidden glass-card p-6 border border-slate-200/60 shadow-xl group">
-            <div class="aspect-square rounded-2xl bg-gradient-to-tr from-slate-100 to-indigo-50 flex flex-col justify-between p-8 relative overflow-hidden">
-              <div class="absolute inset-0 bg-radial-gradient from-transparent to-brand-blue/5 pointer-events-none"></div>
-              <div class="flex justify-between items-start">
-                <i data-lucide="quote" class="w-10 h-10 text-brand-blue/20"></i>
-                <span class="text-xs font-semibold px-3 py-1 bg-white border border-slate-100 rounded-full text-slate-500">現任 PLAVE 成員 & 製作人</span>
-              </div>
-              <div>
-                <h3 class="text-3xl font-bold text-slate-800">韓諾亞</h3>
-                <p class="text-sm text-brand-blue font-medium mt-1">Noah Han | 跨域實踐者</p>
-              </div>
-              <svg class="absolute bottom-0 right-0 w-32 h-32 text-indigo-500/10 pointer-events-none" viewBox="0 0 100 100">
-                <circle cx="100" cy="100" r="80" stroke="currentColor" stroke-width="1" fill="none" />
-                <circle cx="100" cy="100" r="60" stroke="currentColor" stroke-width="1" fill="none" />
-                <circle cx="100" cy="100" r="40" stroke="currentColor" stroke-width="1" fill="none" />
-              </svg>
+            <div class="aspect-square rounded-2xl overflow-hidden relative">
+              <img src="mywork/143906.jpg" alt="Noah Han" class="w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
             </div>
+
             <div class="grid grid-cols-2 gap-4 mt-6">
               <div class="p-4 rounded-2xl bg-slate-50/50 border border-slate-100 text-center">
                 <div class="text-2xl font-bold text-brand-blue">3+ 年</div>
@@ -419,6 +423,62 @@
     </div>
   </section>
 
+  <section id="gallery" class="py-24 relative z-10 px-6 bg-slate-50/30">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 space-y-2">
+        <span class="text-xs font-bold tracking-widest text-brand-green uppercase">EVENTS & MOMENTS</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">活動亮點與現場風采</h2>
+        <p class="text-slate-500 mt-2 max-w-lg mx-auto">出席產業論壇、研討會與活動現場，攜手業界領袖共同探討前沿科技與商業趨勢。</p>
+        <div class="h-1 w-12 bg-gradient-to-r from-brand-green to-brand-blue mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="gallery-item">
+          <img src="mywork/131949.jpg" alt="活動現場 1" />
+        </div>
+        <div class="gallery-item">
+          <img src="mywork/131950.jpg" alt="活動現場 2" />
+        </div>
+        <div class="gallery-item">
+          <img src="mywork/143905.jpg" alt="活動現場 3" />
+        </div>
+        <div class="gallery-item">
+          <img src="mywork/143907.jpg" alt="活動現場 4" />
+        </div>
+        <div class="gallery-item">
+          <img src="mywork/143908.jpg" alt="活動現場 5" />
+        </div>
+        <div class="gallery-item">
+          <img src="mywork/143909.jpg" alt="活動現場 6" />
+        </div>
+        <div class="gallery-item">
+          <img src="mywork/143910.jpg" alt="活動現場 7" />
+        </div>
+        <div class="gallery-item">
+          <img src="mywork/143911.jpg" alt="活動現場 8" />
+        </div>
+        <div class="gallery-item">
+          <img src="mywork/143912.jpg" alt="活動現場 9" />
+        </div>
+        <div class="gallery-item">
+          <img src="mywork/143913.jpg" alt="活動現場 10" />
+        </div>
+        <div class="gallery-item">
+          <img src="mywork/143914.jpg" alt="活動現場 11" />
+        </div>
+        <div class="gallery-item">
+          <img src="mywork/143915.jpg" alt="活動現場 12" />
+        </div>
+        <div class="gallery-item">
+          <img src="mywork/143916.jpg" alt="活動動圖 1" />
+        </div>
+        <div class="gallery-item">
+          <img src="mywork/143918.gif" alt="活動動圖 2" />
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="blog" class="py-24 relative z-10 px-6 bg-slate-50/50 border-t border-b border-slate-100">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16 space-y-2">
@@ -557,6 +617,7 @@
       <div class="flex space-x-6">
         <a href="#about" class="hover:text-brand-blue transition-colors">關於我</a>
         <a href="#services" class="hover:text-brand-blue transition-colors">核心服務</a>
+        <a href="#gallery" class="hover:text-brand-blue transition-colors">活動亮點</a>
         <a href="#contact" class="hover:text-brand-blue transition-colors">預約諮詢</a>
       </div>
     </div>
